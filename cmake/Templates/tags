@@ -1,0 +1,8 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+BINARY_FOLDER	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/cmake/Templates/caffe_config.h.in	/^#define BINARY_FOLDER /;"	d	language:C++	file:
+CAFFE_CONFIG_HPP_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/cmake/Templates/caffe_config.h.in	/^#define CAFFE_CONFIG_HPP_$/;"	d	language:C++	file:
+CMAKE_EXT	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/cmake/Templates/caffe_config.h.in	/^#define CMAKE_EXT /;"	d	language:C++	file:
+CMAKE_SOURCE_DIR	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/cmake/Templates/caffe_config.h.in	/^#define CMAKE_SOURCE_DIR /;"	d	language:C++	file:
+CUDA_TEST_DEVICE	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/cmake/Templates/caffe_config.h.in	/^#define CUDA_TEST_DEVICE /;"	d	language:C++	file:
+EXAMPLES_SOURCE_DIR	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/cmake/Templates/caffe_config.h.in	/^#define EXAMPLES_SOURCE_DIR /;"	d	language:C++	file:
+SOURCE_FOLDER	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/cmake/Templates/caffe_config.h.in	/^#define SOURCE_FOLDER /;"	d	language:C++	file:

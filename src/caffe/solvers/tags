@@ -1,0 +1,17 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+ApplyUpdate	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::ApplyUpdate() {$/;"	f	language:C++	class:caffe::SGDSolver
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^namespace caffe {$/;"	n	language:C++	file:
+ClipGradients	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::ClipGradients() {$/;"	f	language:C++	class:caffe::SGDSolver
+ComputeUpdateValue	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::ComputeUpdateValue(int param_id, Dtype rate) {$/;"	f	language:C++	class:caffe::SGDSolver
+GetLearningRate	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^Dtype SGDSolver<Dtype>::GetLearningRate() {$/;"	f	language:C++	class:caffe::SGDSolver
+INSTANTIATE_CLASS	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^INSTANTIATE_CLASS(SGDSolver);$/;"	p	language:C++	namespace:caffe	file:
+Normalize	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::Normalize(int param_id) {$/;"	f	language:C++	class:caffe::SGDSolver
+PreSolve	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::PreSolve() {$/;"	f	language:C++	class:caffe::SGDSolver
+REGISTER_SOLVER_CLASS	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^REGISTER_SOLVER_CLASS(SGD);$/;"	p	language:C++	namespace:caffe	file:
+Regularize	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::Regularize(int param_id) {$/;"	f	language:C++	class:caffe::SGDSolver
+RestoreSolverStateFromBinaryProto	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::RestoreSolverStateFromBinaryProto($/;"	f	language:C++	class:caffe::SGDSolver
+RestoreSolverStateFromHDF5	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::RestoreSolverStateFromHDF5(const string& state_file) {$/;"	f	language:C++	class:caffe::SGDSolver
+sgd_update_gpu	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void sgd_update_gpu(device* dev, int_tp N, Dtype* g, Dtype* h, Dtype momentum,$/;"	p	language:C++	namespace:caffe	file:
+SnapshotSolverState	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::SnapshotSolverState(const string& model_filename) {$/;"	f	language:C++	class:caffe::SGDSolver
+SnapshotSolverStateToBinaryProto	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::SnapshotSolverStateToBinaryProto($/;"	f	language:C++	class:caffe::SGDSolver
+SnapshotSolverStateToHDF5	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solvers/sgd_solver.cpp	/^void SGDSolver<Dtype>::SnapshotSolverStateToHDF5($/;"	f	language:C++	class:caffe::SGDSolver

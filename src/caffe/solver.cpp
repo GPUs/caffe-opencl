@@ -4,8 +4,10 @@
 #include <string>
 #include <vector>
 
+#ifdef USE_HDF5
 #include "hdf5.h"
 #include "hdf5_hl.h"
+#endif // USE_HDF5
 
 #include "caffe/net.hpp"
 #include "caffe/proto/caffe.pb.h"

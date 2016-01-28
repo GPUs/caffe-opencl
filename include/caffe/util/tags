@@ -1,0 +1,12 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^namespace caffe {$/;"	n	language:C++
+CAFFE_UTIL_HDF5_H_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^#define CAFFE_UTIL_HDF5_H_$/;"	d	language:C++
+hdf5_get_name_by_idx	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^string hdf5_get_name_by_idx(hid_t loc_id, int idx);$/;"	p	language:C++	namespace:caffe
+hdf5_get_num_links	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^int hdf5_get_num_links(hid_t loc_id);$/;"	p	language:C++	namespace:caffe
+hdf5_load_int	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^int hdf5_load_int(hid_t loc_id, const string& dataset_name);$/;"	p	language:C++	namespace:caffe
+hdf5_load_nd_dataset	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^void hdf5_load_nd_dataset($/;"	p	language:C++	namespace:caffe
+hdf5_load_nd_dataset_helper	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^void hdf5_load_nd_dataset_helper($/;"	p	language:C++	namespace:caffe
+hdf5_load_string	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^string hdf5_load_string(hid_t loc_id, const string& dataset_name);$/;"	p	language:C++	namespace:caffe
+hdf5_save_int	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^void hdf5_save_int(hid_t loc_id, const string& dataset_name, int i);$/;"	p	language:C++	namespace:caffe
+hdf5_save_nd_dataset	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^void hdf5_save_nd_dataset($/;"	p	language:C++	namespace:caffe
+hdf5_save_string	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/include/caffe/util/hdf5.hpp	/^void hdf5_save_string(hid_t loc_id, const string& dataset_name,$/;"	p	language:C++	namespace:caffe

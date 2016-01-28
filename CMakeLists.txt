@@ -43,6 +43,8 @@ caffe_option(USE_OPENCV "Build with OpenCV support" ON)
 caffe_option(USE_LEVELDB "Build with levelDB" ON)
 caffe_option(USE_LMDB "Build with lmdb" ON)
 caffe_option(ALLOW_LMDB_NOLOCK "Allow MDB_NOLOCK when reading LMDB files (only if necessary)" OFF)
+caffe_option(USE_HDF5 "Build with hdf5" OFF)
+  		
 
 # ---[ Flag consistency check
 if(CPU_ONLY)
@@ -89,6 +91,7 @@ add_subdirectory(tools)
 add_subdirectory(examples)
 add_subdirectory(python)
 add_subdirectory(matlab)
+add_subdirectory(android) 
 add_subdirectory(docs)
 
 # ---[ Linter target

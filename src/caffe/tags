@@ -1,0 +1,61 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+AppendBottom	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^int_tp Net<Dtype>::AppendBottom(const NetParameter& param,$/;"	f	language:C++	class:caffe::Net
+AppendParam	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::AppendParam(const NetParameter& param, const int_tp layer_id,$/;"	f	language:C++	class:caffe::Net
+AppendTop	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::AppendTop(const NetParameter& param, const int_tp layer_id,$/;"	f	language:C++	class:caffe::Net
+Backward	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::Backward() {$/;"	f	language:C++	class:caffe::Net
+BackwardDebugInfo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::BackwardDebugInfo(const int_tp layer_id) {$/;"	f	language:C++	class:caffe::Net
+BackwardFrom	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::BackwardFrom(int_tp start) {$/;"	f	language:C++	class:caffe::Net
+BackwardFromTo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::BackwardFromTo(int_tp start, int_tp end) {$/;"	f	language:C++	class:caffe::Net
+BackwardTo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::BackwardTo(int_tp end) {$/;"	f	language:C++	class:caffe::Net
+blob_by_name	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^const shared_ptr<Blob<Dtype> > Net<Dtype>::blob_by_name($/;"	f	language:C++	class:caffe::Net
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^namespace caffe {$/;"	n	language:C++	file:
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^namespace caffe {$/;"	n	language:C++	file:
+CheckSnapshotWritePermissions	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::CheckSnapshotWritePermissions() {$/;"	f	language:C++	class:caffe::Solver
+ClearParamDiffs	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::ClearParamDiffs() {$/;"	f	language:C++	class:caffe::Net
+CopyTrainedLayersFrom	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFrom(const NetParameter& param) {$/;"	f	language:C++	class:caffe::Net
+CopyTrainedLayersFrom	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFrom(const string trained_filename) {$/;"	f	language:C++	class:caffe::Net
+CopyTrainedLayersFromBinaryProto	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFromBinaryProto($/;"	f	language:C++	class:caffe::Net
+CopyTrainedLayersFromHDF5	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFromHDF5(const string trained_filename) {$/;"	f	language:C++	class:caffe::Net
+FilterNet	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::FilterNet(const NetParameter& param,$/;"	f	language:C++	class:caffe::Net
+Forward	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^const vector<Blob<Dtype>*>& Net<Dtype>::Forward($/;"	f	language:C++	class:caffe::Net
+Forward	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^string Net<Dtype>::Forward(const string& input_blob_protos, Dtype* loss) {$/;"	f	language:C++	class:caffe::Net
+ForwardDebugInfo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::ForwardDebugInfo(const int_tp layer_id) {$/;"	f	language:C++	class:caffe::Net
+ForwardFrom	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^Dtype Net<Dtype>::ForwardFrom(int_tp start) {$/;"	f	language:C++	class:caffe::Net
+ForwardFromTo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^Dtype Net<Dtype>::ForwardFromTo(int_tp start, int_tp end) {$/;"	f	language:C++	class:caffe::Net
+ForwardPrefilled	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^const vector<Blob<Dtype>*>& Net<Dtype>::ForwardPrefilled(Dtype* loss) {$/;"	f	language:C++	class:caffe::Net
+ForwardTo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^Dtype Net<Dtype>::ForwardTo(int_tp end) {$/;"	f	language:C++	class:caffe::Net
+GetRequestedAction	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^SolverAction::Enum Solver<Dtype>::GetRequestedAction() {$/;"	f	language:C++	class:caffe::Solver
+GetSolverParams	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^SolverParameter Solver<Dtype>::GetSolverParams() {$/;"	f	language:C++	class:caffe::Solver
+has_blob	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^bool Net<Dtype>::has_blob(const string& blob_name) const {$/;"	f	language:C++	class:caffe::Net
+has_layer	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^bool Net<Dtype>::has_layer(const string& layer_name) const {$/;"	f	language:C++	class:caffe::Net
+Init	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::Init(const NetParameter& in_param) {$/;"	f	language:C++	class:caffe::Net
+Init	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::Init(const SolverParameter& param) {$/;"	f	language:C++	class:caffe::Solver
+InitTestNets	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::InitTestNets() {$/;"	f	language:C++	class:caffe::Solver
+InitTrainNet	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::InitTrainNet() {$/;"	f	language:C++	class:caffe::Solver
+InputDebugInfo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::InputDebugInfo(const int_tp input_id) {$/;"	f	language:C++	class:caffe::Net
+INSTANTIATE_CLASS	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^INSTANTIATE_CLASS(Net);$/;"	p	language:C++	namespace:caffe	file:
+INSTANTIATE_CLASS	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^INSTANTIATE_CLASS(Solver);$/;"	p	language:C++	namespace:caffe	file:
+layer_by_name	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^const shared_ptr<Layer<Dtype> > Net<Dtype>::layer_by_name($/;"	f	language:C++	class:caffe::Net
+Net	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^Net<Dtype>::Net(const NetParameter& param, device* device_context,$/;"	f	language:C++	class:caffe::Net
+Net	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^Net<Dtype>::Net(const string& param_file, Phase phase, device* device_context,$/;"	f	language:C++	class:caffe::Net
+Reshape	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::Reshape() {$/;"	f	language:C++	class:caffe::Net
+Restore	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::Restore(const char* state_file) {$/;"	f	language:C++	class:caffe::Solver
+SetActionFunction	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::SetActionFunction(ActionCallback func) {$/;"	f	language:C++	class:caffe::Solver
+ShareTrainedLayersWith	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::ShareTrainedLayersWith(const Net* other) {$/;"	f	language:C++	class:caffe::Net
+ShareWeights	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::ShareWeights() {$/;"	f	language:C++	class:caffe::Net
+Snapshot	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::Snapshot() {$/;"	f	language:C++	class:caffe::Solver
+SnapshotFilename	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^string Solver<Dtype>::SnapshotFilename(const string extension) {$/;"	f	language:C++	class:caffe::Solver
+SnapshotToBinaryProto	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^string Solver<Dtype>::SnapshotToBinaryProto() {$/;"	f	language:C++	class:caffe::Solver
+SnapshotToHDF5	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^string Solver<Dtype>::SnapshotToHDF5() {$/;"	f	language:C++	class:caffe::Solver
+Solve	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::Solve(const char* resume_file) {$/;"	f	language:C++	class:caffe::Solver
+Solver	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^Solver<Dtype>::Solver(const SolverParameter& param, const Solver* root_solver)$/;"	f	language:C++	class:caffe::Solver
+Solver	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^Solver<Dtype>::Solver(const string& param_file, const Solver* root_solver)$/;"	f	language:C++	class:caffe::Solver
+StateMeetsRule	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^bool Net<Dtype>::StateMeetsRule(const NetState& state, const NetStateRule& rule,$/;"	f	language:C++	class:caffe::Net
+Step	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^Dtype Solver<Dtype>::Step(int_tp iters) {$/;"	f	language:C++	class:caffe::Solver
+Test	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::Test(const int_tp test_net_id) {$/;"	f	language:C++	class:caffe::Solver
+TestAll	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::TestAll() {$/;"	f	language:C++	class:caffe::Solver
+ToHDF5	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::ToHDF5(const string& filename, bool write_diff) const {$/;"	f	language:C++	class:caffe::Net
+ToProto	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::ToProto(NetParameter* param, bool write_diff) const {$/;"	f	language:C++	class:caffe::Net
+Update	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::Update() {$/;"	f	language:C++	class:caffe::Net
+UpdateDebugInfo	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/net.cpp	/^void Net<Dtype>::UpdateDebugInfo(const int_tp param_id) {$/;"	f	language:C++	class:caffe::Net
+UpdateSolverParams	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/solver.cpp	/^void Solver<Dtype>::UpdateSolverParams(const SolverParameter& param) {$/;"	f	language:C++	class:caffe::Solver

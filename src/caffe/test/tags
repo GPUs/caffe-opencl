@@ -1,0 +1,34 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+blob_bottom_vec_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  vector<Blob<Dtype>*> blob_bottom_vec_;$/;"	m	language:C++	class:caffe::HDF5DataLayerTest	file:
+blob_bottom_vec_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  vector<Blob<Dtype>*> blob_bottom_vec_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+blob_data_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  Blob<Dtype>* const blob_data_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+blob_label_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  Blob<Dtype>* const blob_label_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+blob_top_data_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  Blob<Dtype>* const blob_top_data_;$/;"	m	language:C++	class:caffe::HDF5DataLayerTest	file:
+blob_top_label2_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  Blob<Dtype>* const blob_top_label2_;$/;"	m	language:C++	class:caffe::HDF5DataLayerTest	file:
+blob_top_label_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  Blob<Dtype>* const blob_top_label_;$/;"	m	language:C++	class:caffe::HDF5DataLayerTest	file:
+blob_top_vec_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  vector<Blob<Dtype>*> blob_top_vec_;$/;"	m	language:C++	class:caffe::HDF5DataLayerTest	file:
+blob_top_vec_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  vector<Blob<Dtype>*> blob_top_vec_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^namespace caffe {$/;"	n	language:C++	file:
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^namespace caffe {$/;"	n	language:C++	file:
+channels_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  int_tp channels_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+CheckBlobEqual	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  void CheckBlobEqual(const Blob<Dtype>& b1, const Blob<Dtype>& b2);$/;"	p	language:C++	class:caffe::HDF5OutputLayerTest	file:
+CheckBlobEqual	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^void HDF5OutputLayerTest<TypeParam>::CheckBlobEqual(const Blob<Dtype>& b1,$/;"	f	language:C++	class:caffe::HDF5OutputLayerTest
+Dtype	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  typedef typename TypeParam::Dtype Dtype;$/;"	t	language:C++	class:caffe::HDF5DataLayerTest	file:
+Dtype	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  typedef typename TypeParam::Dtype Dtype;$/;"	t	language:C++	class:caffe::HDF5OutputLayerTest	file:
+filename	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  string* filename;$/;"	m	language:C++	class:caffe::HDF5DataLayerTest	file:
+HDF5DataLayerTest	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  HDF5DataLayerTest()$/;"	f	language:C++	class:caffe::HDF5DataLayerTest
+HDF5DataLayerTest	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^class HDF5DataLayerTest : public MultiDeviceTest<TypeParam> {$/;"	c	language:C++	namespace:caffe	file:
+HDF5OutputLayerTest	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  HDF5OutputLayerTest()$/;"	f	language:C++	class:caffe::HDF5OutputLayerTest
+HDF5OutputLayerTest	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^class HDF5OutputLayerTest : public MultiDeviceTest<TypeParam> {$/;"	c	language:C++	namespace:caffe	file:
+height_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  int_tp height_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+input_file_name_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  string input_file_name_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+num_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  int_tp num_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+output_file_name_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  string output_file_name_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+SetUp	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  virtual void SetUp() {$/;"	f	language:C++	class:caffe::HDF5DataLayerTest
+TYPED_TEST	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^TYPED_TEST(HDF5DataLayerTest, TestRead) {$/;"	f	language:C++	namespace:caffe
+TYPED_TEST	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^TYPED_TEST(HDF5OutputLayerTest, TestForward) {$/;"	f	language:C++	namespace:caffe
+TYPED_TEST_CASE	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^TYPED_TEST_CASE(HDF5DataLayerTest, TestDtypesAndDevices);$/;"	p	language:C++	namespace:caffe	file:
+TYPED_TEST_CASE	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^TYPED_TEST_CASE(HDF5OutputLayerTest, TestDtypesAndDevices);$/;"	p	language:C++	namespace:caffe	file:
+width_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  int_tp width_;$/;"	m	language:C++	class:caffe::HDF5OutputLayerTest	file:
+~HDF5DataLayerTest	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5data_layer.cpp	/^  virtual ~HDF5DataLayerTest() {$/;"	f	language:C++	class:caffe::HDF5DataLayerTest
+~HDF5OutputLayerTest	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/src/caffe/test/test_hdf5_output_layer.cpp	/^  virtual ~HDF5OutputLayerTest() {$/;"	f	language:C++	class:caffe::HDF5OutputLayerTest
