@@ -1,0 +1,19 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+argmax	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^template <typename T> vector<int> argmax(vector<T> const &values, int N) {$/;"	f	language:C++	namespace:caffe
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^namespace caffe {$/;"	n	language:C++	file:
+CaffeMobile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile::CaffeMobile(const string &model_path, const string &weights_path) {$/;"	f	language:C++	class:caffe::CaffeMobile
+caffe_mobile_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile *CaffeMobile::caffe_mobile_ = 0;$/;"	m	language:C++	class:caffe::CaffeMobile	file:
+ExtractFeatures	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile::ExtractFeatures(const string &img_path,$/;"	f	language:C++	class:caffe::CaffeMobile
+Forward	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^vector<float> CaffeMobile::Forward(const string &filename) {$/;"	f	language:C++	class:caffe::CaffeMobile
+Get	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile *CaffeMobile::Get() {$/;"	f	language:C++	class:caffe::CaffeMobile
+Get	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile *CaffeMobile::Get(const string &model_path,$/;"	f	language:C++	class:caffe::CaffeMobile
+main	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^int main(int argc, char const *argv[]) {$/;"	f	language:C++
+model_path_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^string CaffeMobile::model_path_ = "";$/;"	m	language:C++	class:caffe::CaffeMobile	file:
+PredictTopK	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^vector<int> CaffeMobile::PredictTopK(const string &img_path, int k) {$/;"	f	language:C++	class:caffe::CaffeMobile
+Preprocess	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::Preprocess(const cv::Mat &img,$/;"	f	language:C++	class:caffe::CaffeMobile
+SetMean	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::SetMean(const string &mean_file) {$/;"	f	language:C++	class:caffe::CaffeMobile
+SetMean	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::SetMean(const vector<float> &mean_values) {$/;"	f	language:C++	class:caffe::CaffeMobile
+SetScale	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::SetScale(const float scale) {$/;"	f	language:C++	class:caffe::CaffeMobile
+weights_path_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^string CaffeMobile::weights_path_ = "";$/;"	m	language:C++	class:caffe::CaffeMobile	file:
+WrapInputLayer	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::WrapInputLayer(std::vector<cv::Mat> *input_channels) {$/;"	f	language:C++	class:caffe::CaffeMobile
+~CaffeMobile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile::~CaffeMobile() { net_.reset(); }$/;"	f	language:C++	class:caffe::CaffeMobile
