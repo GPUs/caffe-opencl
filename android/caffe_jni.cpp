@@ -35,7 +35,7 @@ string jstring2string(JNIEnv *env, jstring jstr) {
 }
 
 JNIEXPORT void JNICALL
-Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_setNumThreads(
+Java_strin_caffe_CaffeMobileOpenCL_setNumThreads(
     JNIEnv *env, jobject thiz, jint numThreads) {
   int num_threads = numThreads;
 #ifdef USE_EIGEN
@@ -46,11 +46,11 @@ Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_setNumThreads(
 }
 
 JNIEXPORT void JNICALL
-Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_enableLog(JNIEnv *env,
+Java_strin_caffe_CaffeMobileOpenCL_enableLog(JNIEnv *env,
                                                          jobject thiz,
                                                          jboolean enabled) {}
 
-JNIEXPORT jint JNICALL Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_loadModel(
+JNIEXPORT jint JNICALL Java_strin_caffe_CaffeMobileOpenCL_loadModel(
     JNIEnv *env, jobject thiz, jstring modelPath, jstring weightsPath) {
   CaffeMobile::Get(jstring2string(env, modelPath),
                    jstring2string(env, weightsPath));
@@ -58,14 +58,14 @@ JNIEXPORT jint JNICALL Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_loadModel(
 }
 
 JNIEXPORT void JNICALL
-Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_setMeanWithMeanFile(
+Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanFile(
     JNIEnv *env, jobject thiz, jstring meanFile) {
   CaffeMobile *caffe_mobile = CaffeMobile::Get();
   caffe_mobile->SetMean(jstring2string(env, meanFile));
 }
 
 JNIEXPORT void JNICALL
-Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_setMeanWithMeanValues(
+Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanValues(
     JNIEnv *env, jobject thiz, jfloatArray meanValues) {
   CaffeMobile *caffe_mobile = CaffeMobile::Get();
   int num_channels = env->GetArrayLength(meanValues);
@@ -75,7 +75,7 @@ Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_setMeanWithMeanValues(
 }
 
 JNIEXPORT void JNICALL
-Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_setScale(JNIEnv *env,
+Java_strin_caffe_CaffeMobileOpenCL_setScale(JNIEnv *env,
                                                         jobject thiz,
                                                         jfloat scale) {
   CaffeMobile *caffe_mobile = CaffeMobile::Get();
@@ -83,7 +83,7 @@ Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_setScale(JNIEnv *env,
 }
 
 JNIEXPORT jintArray JNICALL
-Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_predictImage(JNIEnv *env,
+Java_strin_caffe_CaffeMobileOpenCL_predictImage(JNIEnv *env,
                                                             jobject thiz,
                                                             jstring imgPath,
                                                             jint k) {
@@ -102,7 +102,7 @@ Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_predictImage(JNIEnv *env,
 }
 
 JNIEXPORT jobjectArray JNICALL
-Java_com_sh1r0_caffe_1android_1lib_CaffeMobile_extractFeatures(
+Java_strin_caffe_CaffeMobileOpenCL_extractFeatures(
     JNIEnv *env, jobject thiz, jstring imgPath, jstring blobNames) {
   CaffeMobile *caffe_mobile = CaffeMobile::Get();
   vector<vector<float>> features = caffe_mobile->ExtractFeatures(
