@@ -1,12 +1,56 @@
 !_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
-getTimeSec	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^int getTimeSec() {$/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_enableLog	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_enableLog(JNIEnv *env,$/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_extractFeatures	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_extractFeatures($/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_loadModel	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^JNIEXPORT jint JNICALL Java_strin_caffe_CaffeMobileOpenCL_loadModel($/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_predictImage	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_predictImage(JNIEnv *env,$/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanFile	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanFile($/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanValues	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanValues($/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_setNumThreads	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setNumThreads($/;"	f	language:C++
-Java_strin_caffe_CaffeMobileOpenCL_setScale	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setScale(JNIEnv *env,$/;"	f	language:C++
-JNI_OnLoad	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {$/;"	f	language:C++
-jstring2string	/Users/tianlins/Project/monet/Mocha/caffe-opencl/android/caffe_jni.cpp	/^string jstring2string(JNIEnv *env, jstring jstr) {$/;"	f	language:C++
+argmax	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^template <typename T> vector<int> argmax(vector<T> const &values, int N) {$/;"	f	language:C++	namespace:caffe
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^namespace caffe {$/;"	n	language:C++	file:
+caffe	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^namespace caffe {$/;"	n	language:C++
+CaffeMobile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile::CaffeMobile(const string &model_path, const string &weights_path) {$/;"	f	language:C++	class:caffe::CaffeMobile
+CaffeMobile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  CaffeMobile(const string &model_path, const string &weights_path);$/;"	p	language:C++	class:caffe::CaffeMobile
+CaffeMobile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^class CaffeMobile {$/;"	c	language:C++	namespace:caffe
+caffe_mobile_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile *CaffeMobile::caffe_mobile_ = 0;$/;"	m	language:C++	class:caffe::CaffeMobile	file:
+caffe_mobile_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  static CaffeMobile *caffe_mobile_;$/;"	m	language:C++	class:caffe::CaffeMobile
+CAFFE_MOBILE_HPP_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^#define CAFFE_MOBILE_HPP_$/;"	d	language:C++
+ExtractFeatures	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile::ExtractFeatures(const string &img_path,$/;"	f	language:C++	class:caffe::CaffeMobile
+ExtractFeatures	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  vector<vector<float>> ExtractFeatures(const string &img_path,$/;"	p	language:C++	class:caffe::CaffeMobile
+Forward	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^vector<float> CaffeMobile::Forward(const string &filename) {$/;"	f	language:C++	class:caffe::CaffeMobile
+Forward	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  vector<float> Forward(const string &filename);$/;"	p	language:C++	class:caffe::CaffeMobile
+Get	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile *CaffeMobile::Get() {$/;"	f	language:C++	class:caffe::CaffeMobile
+Get	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile *CaffeMobile::Get(const string &model_path,$/;"	f	language:C++	class:caffe::CaffeMobile
+Get	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  static CaffeMobile *Get();$/;"	p	language:C++	class:caffe::CaffeMobile
+Get	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  static CaffeMobile *Get(const string &model_path, const string &weights_path);$/;"	p	language:C++	class:caffe::CaffeMobile
+getTimeSec	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^int getTimeSec() {$/;"	f	language:C++
+input_geometry_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  cv::Size input_geometry_;$/;"	m	language:C++	class:caffe::CaffeMobile
+Java_strin_caffe_CaffeMobileOpenCL_enableLog	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_enableLog(JNIEnv *env,$/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_extractFeatures	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_extractFeatures($/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_loadModel	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^JNIEXPORT jint JNICALL Java_strin_caffe_CaffeMobileOpenCL_loadModel($/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_predictImage	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_predictImage(JNIEnv *env,$/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanFile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanFile($/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanValues	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setMeanWithMeanValues($/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_setNumThreads	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setNumThreads($/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_setScale	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_setScale(JNIEnv *env,$/;"	f	language:C++
+Java_strin_caffe_CaffeMobileOpenCL_timePrediction	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^Java_strin_caffe_CaffeMobileOpenCL_timePrediction(JNIEnv *env,$/;"	f	language:C++
+JNI_OnLoad	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {$/;"	f	language:C++
+jstring2string	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_jni.cpp	/^string jstring2string(JNIEnv *env, jstring jstr) {$/;"	f	language:C++
+main	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^int main(int argc, char const *argv[]) {$/;"	f	language:C++
+mean_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  cv::Mat mean_;$/;"	m	language:C++	class:caffe::CaffeMobile
+model_path_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^string CaffeMobile::model_path_ = "";$/;"	m	language:C++	class:caffe::CaffeMobile	file:
+model_path_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  static string model_path_;$/;"	m	language:C++	class:caffe::CaffeMobile
+net_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  shared_ptr<Net<float>> net_;$/;"	m	language:C++	class:caffe::CaffeMobile
+num_channels_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  int num_channels_;$/;"	m	language:C++	class:caffe::CaffeMobile
+PredictTopK	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^vector<int> CaffeMobile::PredictTopK(const string &img_path, int k) {$/;"	f	language:C++	class:caffe::CaffeMobile
+PredictTopK	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  vector<int> PredictTopK(const string &img_path, int k);$/;"	p	language:C++	class:caffe::CaffeMobile
+Preprocess	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::Preprocess(const cv::Mat &img,$/;"	f	language:C++	class:caffe::CaffeMobile
+Preprocess	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  void Preprocess(const cv::Mat &img, vector<cv::Mat> *input_channels);$/;"	p	language:C++	class:caffe::CaffeMobile
+scale_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  float scale_;$/;"	m	language:C++	class:caffe::CaffeMobile
+SetMean	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::SetMean(const string &mean_file) {$/;"	f	language:C++	class:caffe::CaffeMobile
+SetMean	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::SetMean(const vector<float> &mean_values) {$/;"	f	language:C++	class:caffe::CaffeMobile
+SetMean	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  void SetMean(const string &mean_file);$/;"	p	language:C++	class:caffe::CaffeMobile
+SetMean	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  void SetMean(const vector<float> &mean_values);$/;"	p	language:C++	class:caffe::CaffeMobile
+SetScale	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::SetScale(const float scale) {$/;"	f	language:C++	class:caffe::CaffeMobile
+SetScale	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  void SetScale(const float scale);$/;"	p	language:C++	class:caffe::CaffeMobile
+timePrediction	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^float CaffeMobile::timePrediction(const vector<string> &img_paths) {$/;"	f	language:C++	class:caffe::CaffeMobile
+timePrediction	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  float timePrediction(const vector<string>& img_paths);$/;"	p	language:C++	class:caffe::CaffeMobile
+weights_path_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^string CaffeMobile::weights_path_ = "";$/;"	m	language:C++	class:caffe::CaffeMobile	file:
+weights_path_	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  static string weights_path_;$/;"	m	language:C++	class:caffe::CaffeMobile
+WrapInputLayer	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^void CaffeMobile::WrapInputLayer(std::vector<cv::Mat> *input_channels, int layeri) {$/;"	f	language:C++	class:caffe::CaffeMobile
+WrapInputLayer	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  void WrapInputLayer(std::vector<cv::Mat> *input_channels, int layeri = 0);$/;"	p	language:C++	class:caffe::CaffeMobile
+~CaffeMobile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.cpp	/^CaffeMobile::~CaffeMobile() { net_.reset(); }$/;"	f	language:C++	class:caffe::CaffeMobile
+~CaffeMobile	/Users/tianlins/Project/monet/caffe-android-lib/caffe-opencl/android/caffe_mobile.hpp	/^  ~CaffeMobile();$/;"	p	language:C++	class:caffe::CaffeMobile

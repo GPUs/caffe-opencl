@@ -101,6 +101,25 @@ Java_strin_caffe_CaffeMobileOpenCL_predictImage(JNIEnv *env,
   return result;
 }
 
+JNIEXPORT jfloat JNICALL
+Java_strin_caffe_CaffeMobileOpenCL_timePrediction(JNIEnv *env,
+                                                            jobject thiz,
+                                                            jobjectArray imgPaths) {
+  CaffeMobile *caffe_mobile = CaffeMobile::Get();
+
+  vector<string> newImgPaths;
+  int stringCount = env->GetArrayLength(imgPaths);
+  
+  for(int i = 0; i < stringCount; i++) {
+    jstring str = (jstring) env->GetObjectArrayElement(imgPaths, i);
+    const char *rawString = env->GetStringUTFChars(str, 0);
+    newImgPaths.push_back(string(rawString));
+  }
+
+  float result = caffe_mobile->timePrediction(newImgPaths);
+  return result;
+}
+
 JNIEXPORT jobjectArray JNICALL
 Java_strin_caffe_CaffeMobileOpenCL_extractFeatures(
     JNIEnv *env, jobject thiz, jstring imgPath, jstring blobNames) {

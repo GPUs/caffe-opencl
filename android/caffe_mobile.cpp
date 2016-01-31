@@ -192,8 +192,8 @@ void CaffeMobile::Preprocess(const cv::Mat &img,
       << "Input channels are not wrapping the input layer of the network.";
 }
 
-void CaffeMobile::WrapInputLayer(std::vector<cv::Mat> *input_channels) {
-  Blob<float> *input_layer = net_->input_blobs()[0];
+void CaffeMobile::WrapInputLayer(std::vector<cv::Mat> *input_channels, int layeri) {
+  Blob<float> *input_layer = net_->input_blobs()[layeri];
 
   int width = input_layer->width();
   int height = input_layer->height();
@@ -237,6 +237,38 @@ vector<int> CaffeMobile::PredictTopK(const string &img_path, int k) {
   const vector<float> probs = Forward(img_path);
   k = std::min<int>(std::max(k, 1), probs.size());
   return argmax(probs, k);
+}
+
+float CaffeMobile::timePrediction(const vector<string> &img_paths) {
+  float total_time = 0.;
+  const size_t batchsize = net_->input_blobs().size();
+
+  for(size_t bi = 0; bi < img_paths.size(); bi += batchsize) { // batching.
+    for(size_t i = bi; i < bi + batchsize; i++) {
+      if(i >= img_paths.size()) break;
+      auto img_path = img_paths[i];
+      cv::Mat img = cv::imread(img_path, -1);
+      CHECK(!img.empty()) << "Unable to decode image " << img_path;
+      Blob<float> *input_layer = net_->input_blobs()[i - bi];
+
+      input_layer->Reshape(1, num_channels_, input_geometry_.height,
+                           input_geometry_.width);
+      net_->Reshape();
+
+      vector<cv::Mat> input_channels;
+      WrapInputLayer(&input_channels, i - bi);
+      Preprocess(img, &input_channels);
+
+    }
+
+    clock_t t_start = clock();
+    net_->ForwardPrefilled();
+    clock_t t_end = clock();
+
+    total_time += t_end - t_start;
+  }
+
+  return 1000.0 * total_time / CLOCKS_PER_SEC;
 }
 
 vector<vector<float>>

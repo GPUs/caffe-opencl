@@ -25,6 +25,7 @@ public:
   void SetScale(const float scale);
 
   vector<int> PredictTopK(const string &img_path, int k);
+  float timePrediction(const vector<string>& img_paths);
 
   vector<vector<float>> ExtractFeatures(const string &img_path,
                                         const string &str_blob_names);
@@ -38,7 +39,7 @@ private:
 
   void Preprocess(const cv::Mat &img, vector<cv::Mat> *input_channels);
 
-  void WrapInputLayer(std::vector<cv::Mat> *input_channels);
+  void WrapInputLayer(std::vector<cv::Mat> *input_channels, int layeri = 0);
 
   vector<float> Forward(const string &filename);
 
