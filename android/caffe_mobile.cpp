@@ -13,6 +13,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
+#include <chrono>
+
 using std::clock;
 using std::clock_t;
 using std::string;
@@ -261,14 +263,16 @@ float CaffeMobile::timePrediction(const vector<string> &img_paths) {
 
     }
 
-    clock_t t_start = clock();
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
     net_->ForwardPrefilled();
-    clock_t t_end = clock();
+    end = std::chrono::system_clock::now();
+    std::chrono::duration<double, std::milli> fp_ms = end - start;
 
-    total_time += t_end - t_start;
+    total_time += fp_ms.count();
   }
 
-  return 1000.0 * total_time / CLOCKS_PER_SEC;
+  return total_time;
 }
 
 vector<vector<float>>

@@ -31,6 +31,7 @@ ELSE (ViennaCL_FOUND)
 ENDIF (ViennaCL_FOUND)
 
 IF(ViennaCL_WITH_OPENCL)
+  message("trying to find OpenCL")
   find_package(OpenCL REQUIRED)
 ENDIF(ViennaCL_WITH_OPENCL)
 

@@ -18,6 +18,7 @@ if(USE_CUDA AND HAVE_CUDA)
 endif()
 
 add_library(caffe ${srcs})
+target_compile_definitions(caffe PRIVATE VIENNACL_WITH_OPENCL=1)
 target_link_libraries(caffe proto ${Caffe_LINKER_LIBS})
 caffe_default_properties(caffe)
 # android does not recognize properties.
