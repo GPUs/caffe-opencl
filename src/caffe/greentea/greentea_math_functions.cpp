@@ -32,6 +32,11 @@
 
 #include "caffe/util/math_functions.hpp"
 
+// use custom blas.
+#ifdef USE_CUSTOM_BLAS
+#include "caffe/greentea/common/oclobject.hpp"
+#endif 
+
 #ifdef USE_CLBLAS
 #include <clBLAS.h>
 #else
@@ -185,6 +190,8 @@ void greentea_gpu_gemm(const int_tp ctx_id, const CBLAS_TRANSPOSE TransA,
                        const int_tp offC) {
   viennacl::ocl::context &ctx = viennacl::ocl::get_context(ctx_id);
 
+  VLOG(1) << "gemm " << M << " " << K << " " << N;
+
   if (ctx.devices()[0].type() == CL_DEVICE_TYPE_CPU) {
     Dtype* Aptr = reinterpret_cast<Dtype*>(clEnqueueMapBuffer(
         ctx.get_queue().handle().get(), A, true, CL_MAP_READ,
@@ -270,10 +277,6 @@ void greentea_gpu_gemm(const int_tp ctx_id, const CBLAS_TRANSPOSE TransA,
 
     end = std::chrono::system_clock::now();
     std::chrono::duration<double, std::milli> fp_ms = end - start;
-
-    VLOG(1) << "gemm " << fp_ms.count();
-    VLOG(INFO) << "matsize " << A_size1 << " " << A_size2 << " " 
-      << B_size1 << " " << B_size2;
 
 #else
     clblasOrder clOrder = clblasRowMajor;

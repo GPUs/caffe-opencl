@@ -7,6 +7,7 @@
 #include <ctime>
 #include <tuple>
 #include <vector>
+#include <iostream>
 
 #include "caffe/common.hpp"
 
@@ -69,12 +70,15 @@ int64_t cluster_seedgen(void) {
 }
 
 void GlobalInit(int* pargc, char*** pargv) {
+  // Provide a backtrace on segfault.
+  std::cout << "backtrace on segfault" << std::endl << std::flush;
+  ::google::InstallFailureSignalHandler();
   // Google flags.
+  std::cout << "parse commands" << std::endl << std::flush;
   ::gflags::ParseCommandLineFlags(pargc, pargv, true);
   // Google logging.
+  std::cout << "init glog" << std::endl << std::flush;
   ::google::InitGoogleLogging(*(pargv)[0]);
-  // Provide a backtrace on segfault.
-  ::google::InstallFailureSignalHandler();
 }
 
 
@@ -519,6 +523,8 @@ void Caffe::DeviceQuery() {
 #endif  // USE_CUDA
   } else {
 #ifdef USE_GREENTEA
+    std::cout << " - Device Name: " << viennacl::ocl::current_device().name() << std::endl;
+    std::cout << " - context type " << viennacl::ocl::current_context().current_device().type() << CL_DEVICE_TYPE_GPU << std::endl;
     // TODO: Complete OpenCL device information of current device
 #endif  // USE_GREENTEA
   }

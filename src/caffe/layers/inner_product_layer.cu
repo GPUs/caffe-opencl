@@ -4,6 +4,8 @@
 #include "caffe/layers/inner_product_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
+#include <chrono>
+
 namespace caffe {
 
 template<typename Dtype>
@@ -12,6 +14,9 @@ void InnerProductLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
   const Dtype* bottom_data = bottom[0]->gpu_data();
   Dtype* top_data = top[0]->mutable_gpu_data();
   const Dtype* weight = this->blobs_[0]->gpu_data();
+  std::chrono::time_point<std::chrono::system_clock> start, end;
+
+  start = std::chrono::system_clock::now();
 
   if (this->device_->backend() == BACKEND_CUDA) {
 #ifdef USE_CUDA
@@ -55,6 +60,14 @@ void InnerProductLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
                                  (cl_mem) (this->blobs_[1]->gpu_data()), 0,
                                  (Dtype) 1., (cl_mem) top_data, 0);
     }
+
+
+    this->device_->FinishQueues();
+    end = std::chrono::system_clock::now();
+
+    std::chrono::duration<double, std::milli> fp_ms = end - start;
+
+    VLOG(1) << "fc " << fp_ms.count();
 #endif  // USE_GREENTEA
   }
 }
