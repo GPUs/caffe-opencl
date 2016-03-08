@@ -8,6 +8,7 @@ class CmdParserMain : public CmdParserCommon
 {
 public:
   CmdOption<string> mode;
+  CmdOption<size_t> numThreads;
   
   CmdParserMain (int argc, const char** argv);
 

@@ -69,6 +69,12 @@ int main(int argc, const char* argv[]) {
   if(setMode(cmdparser->mode.getValue())) {
     return 1;
   }
+
+  // Set the number of threads.
+  if(cmdparser->mode.getValue() == "cpu") {
+    size_t numThreads = cmdparser->numThreads.getValue();
+    setNumThreads(numThreads);
+  }
   return 0;
 }
 

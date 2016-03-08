@@ -20,6 +20,14 @@ CmdParserMain::CmdParserMain (int argc, const char** argv) :
         "",
         "which mode to run caffe (gpu / cpu / viennacl)",
         "gpu"
+    ),
+    numThreads(
+        *this,
+        't',
+        "thread",
+        "<integer>",
+        "the number of threads (cpu mode only)",
+        4
     )
 {
 }
