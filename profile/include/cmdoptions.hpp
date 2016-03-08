@@ -10,6 +10,8 @@ public:
   CmdOption<string> mode;
   CmdOption<size_t> numThreads;
   
+  CmdOption<string> model_path, weights_path;
+
   CmdParserMain (int argc, const char** argv);
 
   virtual void parse ();

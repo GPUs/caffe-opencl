@@ -28,7 +28,24 @@ CmdParserMain::CmdParserMain (int argc, const char** argv) :
         "<integer>",
         "the number of threads (cpu mode only)",
         4
+    ),
+    model_path(
+        *this,
+        0,
+        "model",
+        "",
+        "path to caffe model",
+        "/sdcard/model/bvlc_reference_caffenet/deploy.prototxt"
+    ),
+    weights_path(
+        *this,
+        0,
+        "weights",
+        "",
+        "weights of the caffe model",
+        "/sdcard/model/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel"
     )
+
 {
 }
 

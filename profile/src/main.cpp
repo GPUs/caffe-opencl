@@ -75,6 +75,14 @@ int main(int argc, const char* argv[]) {
     size_t numThreads = cmdparser->numThreads.getValue();
     setNumThreads(numThreads);
   }
+
+  // load model.
+  CaffeMobile::Get(
+      cmdparser->model_path.getValue(), 
+      cmdparser->weights_path.getValue()
+  );
+
+  // run forward.
   return 0;
 }
 
