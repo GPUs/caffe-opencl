@@ -51,6 +51,15 @@ int setMode(string mode) {
     Caffe::SetDevices(gpus);  // TODO: not sure we need to set twice.
     Caffe::set_mode(Caffe::GPU);
     Caffe::SetDevice(gpus[0]);
+    Caffe::Get().USE_CUSTOM_GPU_KERNEL = true;
+    return 0;
+  }else if(mode == "viennacl") {
+    vector<int> gpus;
+    gpus.push_back(0);
+    LOG(INFO) << "Use GPU with device ID " << gpus[0];
+    Caffe::SetDevices(gpus);  // TODO: not sure we need to set twice.
+    Caffe::set_mode(Caffe::GPU);
+    Caffe::SetDevice(gpus[0]);
     return 0;
   }else if(mode == "cpu") {
     LOG(INFO) << "Use CPU.";
@@ -87,6 +96,9 @@ int main(int argc, const char* argv[]) {
   );
   
   // run feedforward.
+  cout << "[test] warm up run" << endl;
+  mobile->net_->Forward(vector<Blob<float>*>(), 0);
+  cout << "[test] running" << endl;
   size_t iterations = cmdparser->iterations.getValue();
   std::pair<double, double> first_time_energy = Mocha::getCurrentEnergy();
   double start = time_stamp();
@@ -94,6 +106,7 @@ int main(int argc, const char* argv[]) {
     mobile->net_->Forward(vector<Blob<float>*>(), 0);
   }
   double end = time_stamp();
+  cout << "[test] quiescence" << endl;
   sleep(2); 
   std::pair<double, double> last_time_energy = Mocha::getCurrentEnergy();
 
