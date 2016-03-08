@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 if(ANDROID)
-  include_directories("include") # This is needed for gtest.
+  include_directories("include")
   add_executable(caffe-profile
     src/cmdparser.cpp
     src/cmdoptions.cpp

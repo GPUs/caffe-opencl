@@ -52,6 +52,22 @@ CmdParserMain::CmdParserMain (int argc, const char** argv) :
         "",
         "weights of the caffe model",
         "/sdcard/model/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel"
+    ),
+    cl_program(
+        *this,
+        0,
+        "cl_program",
+        "",
+        "name of the cl_program to use",
+        "blocking-2-v4"
+    ),
+    arithmetic(
+        *this,
+        0,
+        "arithmetic",
+        "",
+        "precision of the arithmetics",
+        "float"
     )
 
 {

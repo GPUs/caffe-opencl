@@ -10,6 +10,8 @@
 #include "caffe/caffe.hpp"
 #include "energy.hpp"
 
+#include "caffe/customcl/customcl_math_functions.hpp"
+
 using namespace std;
 
 #ifdef USE_EIGEN
@@ -21,6 +23,9 @@ using namespace std;
 using caffe::CaffeMobile;
 using caffe::Blob;
 using caffe::Caffe;
+
+
+shared_ptr<CmdParserMain> cmdparser;
 
 void setNumThreads(int numThreads) {
   int num_threads = numThreads;
@@ -47,11 +52,15 @@ int setMode(string mode) {
   if(mode == "gpu") {
     vector<int> gpus;
     gpus.push_back(0);
-    LOG(INFO) << "Use GPU with device ID " << gpus[0];
     Caffe::SetDevices(gpus);  // TODO: not sure we need to set twice.
     Caffe::set_mode(Caffe::GPU);
     Caffe::SetDevice(gpus[0]);
     Caffe::Get().USE_CUSTOM_GPU_KERNEL = true;
+
+    caffe::customcl_setup(
+        cmdparser->cl_program.getValue(),
+        cmdparser->arithmetic.getValue()
+    );
     return 0;
   }else if(mode == "viennacl") {
     vector<int> gpus;
@@ -71,23 +80,26 @@ int setMode(string mode) {
 }
 
 int main(int argc, const char* argv[]) {
-  auto cmdparser = make_shared<CmdParserMain>(argc, argv);
+  cmdparser = make_shared<CmdParserMain>(argc, argv);
   cmdparser->parse();
-  
   // Immediatly exit if user wanted to see the usage information only.
   if(cmdparser->help.isSet())
   {
     return 0;
   }
+
+  std::cout << "[kernel] " << cmdparser->cl_program.getValue() << endl;
+
   if(setMode(cmdparser->mode.getValue())) {
     return 1;
   }
-
+  
   // Set the number of threads.
   if(cmdparser->mode.getValue() == "cpu") {
     size_t numThreads = cmdparser->numThreads.getValue();
     setNumThreads(numThreads);
   }
+
 
   // load model.
   CaffeMobile* mobile = CaffeMobile::Get(

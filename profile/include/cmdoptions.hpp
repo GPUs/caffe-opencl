@@ -11,6 +11,8 @@ public:
   CmdOption<size_t> numThreads;
   CmdOption<size_t> iterations;
   
+  CmdOption<string> cl_program, arithmetic;
+
   CmdOption<string> model_path, weights_path;
 
   CmdParserMain (int argc, const char** argv);

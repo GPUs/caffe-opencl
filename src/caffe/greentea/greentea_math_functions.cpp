@@ -190,8 +190,6 @@ void greentea_gpu_gemm(const int_tp ctx_id, const CBLAS_TRANSPOSE TransA,
                        const int_tp offC) {
   viennacl::ocl::context &ctx = viennacl::ocl::get_context(ctx_id);
 
-  VLOG(1) << "gemm " << M << " " << K << " " << N;
-
   if (ctx.devices()[0].type() == CL_DEVICE_TYPE_CPU) {
     Dtype* Aptr = reinterpret_cast<Dtype*>(clEnqueueMapBuffer(
         ctx.get_queue().handle().get(), A, true, CL_MAP_READ,
@@ -226,9 +224,6 @@ void greentea_gpu_gemm(const int_tp ctx_id, const CBLAS_TRANSPOSE TransA,
     
     
     // time gemm.
-    std::chrono::time_point<std::chrono::system_clock> start, end;
-    start = std::chrono::system_clock::now();
-
     size_type A_size1 = static_cast<size_type>((TransA == CblasTrans) ? K : M);
     size_type A_size2 = static_cast<size_type>((TransA == CblasTrans) ? M : K);
 
@@ -274,9 +269,6 @@ void greentea_gpu_gemm(const int_tp ctx_id, const CBLAS_TRANSPOSE TransA,
                                   beta);
     else if (TransA == CblasNoTrans && TransB == CblasNoTrans)
       viennacl::linalg::prod_impl(matA, matB, matC, alpha, beta);
-
-    end = std::chrono::system_clock::now();
-    std::chrono::duration<double, std::milli> fp_ms = end - start;
 
 #else
     clblasOrder clOrder = clblasRowMajor;

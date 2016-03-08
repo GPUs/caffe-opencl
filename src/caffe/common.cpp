@@ -117,6 +117,7 @@ Caffe::Caffe(const Caffe &obj)
 #endif  // USE_CUDA
       random_generator_(),
       mode_(Caffe::CPU),
+      USE_CUSTOM_GPU_KERNEL(false),
       cpu_device_(new device(-1, -1, Backend::BACKEND_CPU)),
       default_device_(cpu_device_.get()),
       solver_count_(1),
@@ -185,6 +186,7 @@ void Caffe::SelectDevice(device* device_context) {
 Caffe::Caffe()
 : random_generator_(),
 mode_(Caffe::CPU),
+USE_CUSTOM_GPU_KERNEL(false),
 default_device_(nullptr),
 solver_count_(1),
 root_solver_(true) {}
@@ -244,6 +246,7 @@ Caffe::Caffe()
 #endif  // USE_CUDA
       random_generator_(),
       mode_(Caffe::CPU),
+      USE_CUSTOM_GPU_KERNEL(false),
       cpu_device_(new device(-1, -1, Backend::BACKEND_CPU)),
       default_device_(cpu_device_.get()),
       solver_count_(1), root_solver_(true) {

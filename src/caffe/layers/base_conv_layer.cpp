@@ -10,7 +10,11 @@
 #include "caffe/greentea/greentea.hpp"
 #include "caffe/greentea/greentea_im2col.hpp"
 #include "caffe/greentea/greentea_math_functions.hpp"
+#include "caffe/customcl/customcl_math_functions.hpp"
 #endif
+
+#include "caffe/customcl/basic.hpp"
+#include "caffe/customcl/oclobject.hpp"
 
 #include <chrono>
 
@@ -396,15 +400,23 @@ void BaseConvolutionLayer<Dtype>::forward_gpu_gemm(const Dtype* input,
       col_buff = col_buffer()->gpu_data();
     }
 
-    for (int_tp g = 0; g < group_; ++g) {
-      greentea_gpu_gemm<Dtype>(this->device_->id(), CblasNoTrans,
-                               CblasNoTrans, conv_out_channels_ / group_,
-                               conv_out_spatial_dim_, kernel_dim_,
-                               (Dtype) 1., (cl_mem) weights, weight_offset_ * g,
-                               (cl_mem) col_buff,
-                               (is_1x1_ ? input_off : 0) + col_offset_ * g,
-                               (Dtype) 0., (cl_mem) output,
-                               output_off + output_offset_ * g);
+    if(Caffe::Get().USE_CUSTOM_GPU_KERNEL) { // use custom implementation.
+        customcl_gpu_gemm<Dtype>(this->device_->id(), conv_out_channels_ / group_,
+                                 conv_out_spatial_dim_, kernel_dim_, 
+                                 weights,
+                                 col_buff,
+                                 output);
+    }else{ // use ViennaCL.
+      for (int_tp g = 0; g < group_; ++g) {
+        greentea_gpu_gemm<Dtype>(this->device_->id(), CblasNoTrans,
+                                 CblasNoTrans, conv_out_channels_ / group_,
+                                 conv_out_spatial_dim_, kernel_dim_,
+                                 (Dtype) 1., (cl_mem) weights, weight_offset_ * g,
+                                 (cl_mem) col_buff,
+                                 (is_1x1_ ? input_off : 0) + col_offset_ * g,
+                                 (Dtype) 0., (cl_mem) output,
+                                 output_off + output_offset_ * g);
+      }
     }
 #endif  // USE_GREENTEA
   }

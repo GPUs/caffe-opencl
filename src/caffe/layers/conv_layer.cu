@@ -33,9 +33,6 @@ void ConvolutionLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
         this->forward_gpu_bias(top_data, n * this->top_dim_, bias);
       }
     }
-    // Multi queue execution, finish all queues
-    startx = std::chrono::system_clock::now();
-    endx = std::chrono::system_clock::now();
   }
 
   this->device_->FinishQueues();
