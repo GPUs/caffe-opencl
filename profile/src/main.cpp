@@ -2,10 +2,13 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <ctime>
 
+#include "basic.hpp"
 #include "cmdoptions.hpp"
 #include "caffe_mobile.hpp"
 #include "caffe/caffe.hpp"
+#include "energy.hpp"
 
 using namespace std;
 
@@ -16,6 +19,7 @@ using namespace std;
 #endif
 
 using caffe::CaffeMobile;
+using caffe::Blob;
 using caffe::Caffe;
 
 void setNumThreads(int numThreads) {
@@ -77,12 +81,33 @@ int main(int argc, const char* argv[]) {
   }
 
   // load model.
-  CaffeMobile::Get(
+  CaffeMobile* mobile = CaffeMobile::Get(
       cmdparser->model_path.getValue(), 
       cmdparser->weights_path.getValue()
   );
+  
+  // run feedforward.
+  size_t iterations = cmdparser->iterations.getValue();
+  std::pair<double, double> first_time_energy = Mocha::getCurrentEnergy();
+  double start = time_stamp();
+  for(size_t it = 0; it < iterations; it++) {
+    mobile->net_->Forward(vector<Blob<float>*>(), 0);
+  }
+  double end = time_stamp();
+  sleep(2); 
+  std::pair<double, double> last_time_energy = Mocha::getCurrentEnergy();
 
-  // run forward.
+  // aggregate result.
+  double time = (end - start) / iterations;
+  double energy = (last_time_energy.second - first_time_energy.second) / 1e3 / iterations;
+  double power = energy / time;
+  cout << "feedforward" << endl;
+  cout << "\ttime = " << time << " secs" << endl;
+  cout << "\tenergy = " << energy << " mJ" << endl;
+  cout << "\tpower = " << energy / time << " mW" << endl;
+
+  // clean up.
+  delete mobile;
   return 0;
 }
 

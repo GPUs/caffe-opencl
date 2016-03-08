@@ -30,6 +30,7 @@ public:
   vector<vector<float>> ExtractFeatures(const string &img_path,
                                         const string &str_blob_names);
 
+  shared_ptr<Net<float>> net_;
 private:
   static CaffeMobile *caffe_mobile_;
   static string model_path_;
@@ -43,7 +44,6 @@ private:
 
   vector<float> Forward(const string &filename);
 
-  shared_ptr<Net<float>> net_;
   cv::Size input_geometry_;
   int num_channels_;
   cv::Mat mean_;

@@ -29,6 +29,14 @@ CmdParserMain::CmdParserMain (int argc, const char** argv) :
         "the number of threads (cpu mode only)",
         4
     ),
+    iterations(
+        *this,
+        'i',
+        "iterations",
+        "<integer>",
+        "the total number of iterations to run the benchmark",
+        1
+    ),
     model_path(
         *this,
         0,

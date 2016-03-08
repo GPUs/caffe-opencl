@@ -9,6 +9,7 @@ class CmdParserMain : public CmdParserCommon
 public:
   CmdOption<string> mode;
   CmdOption<size_t> numThreads;
+  CmdOption<size_t> iterations;
   
   CmdOption<string> model_path, weights_path;
 
