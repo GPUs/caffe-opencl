@@ -98,3 +98,7 @@ LOCK
 LOG*
 CURRENT
 MANIFEST-*
+
+# vim tags
+tags
+.tags

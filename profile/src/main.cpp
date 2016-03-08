@@ -16,6 +16,7 @@ using namespace std;
 #endif
 
 using caffe::CaffeMobile;
+using caffe::Caffe;
 
 void setNumThreads(int numThreads) {
   int num_threads = numThreads;
@@ -37,15 +38,37 @@ void setMeanWithMeanFile(string meanFile) {
   caffe_mobile->SetMean(meanFile);
 }
 
+int setMode(string mode) {
+  cout << "[mode]" << mode << endl;
+  if(mode == "gpu") {
+    vector<int> gpus;
+    gpus.push_back(0);
+    LOG(INFO) << "Use GPU with device ID " << gpus[0];
+    Caffe::SetDevices(gpus);  // TODO: not sure we need to set twice.
+    Caffe::set_mode(Caffe::GPU);
+    Caffe::SetDevice(gpus[0]);
+    return 0;
+  }else if(mode == "cpu") {
+    LOG(INFO) << "Use CPU.";
+    Caffe::set_mode(Caffe::CPU);
+    return 0;
+  }
+  LOG(ERROR) << "caffe mode undefined: " << mode << endl;
+  return 1;
+}
+
 int main(int argc, const char* argv[]) {
   auto cmdparser = make_shared<CmdParserMain>(argc, argv);
   cmdparser->parse();
-
+  
   // Immediatly exit if user wanted to see the usage information only.
   if(cmdparser->help.isSet())
   {
     return 0;
   }
-  cout << "mode: " << cmdparser->mode.getValue() << endl;
+  if(setMode(cmdparser->mode.getValue())) {
+    return 1;
+  }
+  return 0;
 }
 

@@ -59,22 +59,6 @@ CaffeMobile::CaffeMobile(const string &model_path, const string &weights_path) {
   CHECK_GT(model_path.size(), 0) << "Need a model definition to score.";
   CHECK_GT(weights_path.size(), 0) << "Need model weights to score.";
 
-  vector<int> gpus;
-  gpus.push_back(0);
-  LOG(INFO) << "#GPUs" << gpus.size();
-
-  if (gpus.size() != 0) {
-#ifndef CPU_ONLY
-    LOG(INFO) << "Use GPU with device ID " << gpus[0];
-    Caffe::SetDevices(gpus);
-    Caffe::set_mode(Caffe::GPU);
-    Caffe::SetDevice(gpus[0]);
-#endif //!CPU_ONLY
-  } else {
-    LOG(INFO) << "Use CPU.";
-    Caffe::set_mode(Caffe::CPU);
-  }
-
   clock_t t_start = clock();
   net_.reset(new Net<float>(model_path, caffe::TEST, Caffe::GetDefaultDevice()));
   net_->CopyTrainedLayersFrom(weights_path);
