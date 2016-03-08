@@ -388,10 +388,6 @@ void BaseConvolutionLayer<Dtype>::forward_gpu_gemm(const Dtype* input,
 #endif  // USE_CUDA
   } else {
 #ifdef USE_GREENTEA
-    // time gemm.
-    std::chrono::time_point<std::chrono::system_clock> start, end;
-    // start = std::chrono::system_clock::now();
-    
     if (!is_1x1_) {
       if (!skip_im2col) {
         greentea_conv_im2col_gpu(input, input_off,
@@ -399,13 +395,6 @@ void BaseConvolutionLayer<Dtype>::forward_gpu_gemm(const Dtype* input,
       }
       col_buff = col_buffer()->gpu_data();
     }
-
-    // this->device_->FinishQueues(); // TODO: temp.
-    // end = std::chrono::system_clock::now();
-    std::chrono::duration<double, std::milli> fp_ms = end - start;
-
-    // VLOG(1) << "im2col " << fp_ms.count();
-    // start = std::chrono::system_clock::now();
 
     for (int_tp g = 0; g < group_; ++g) {
       greentea_gpu_gemm<Dtype>(this->device_->id(), CblasNoTrans,
@@ -417,12 +406,6 @@ void BaseConvolutionLayer<Dtype>::forward_gpu_gemm(const Dtype* input,
                                (Dtype) 0., (cl_mem) output,
                                output_off + output_offset_ * g);
     }
-    
-    // this->device_->FinishQueues(); // TODO: temp.
-    // end = std::chrono::system_clock::now();
-    // fp_ms = end - start;
-    // VLOG(1) << "total_gemm " << (end - start).count();
-
 #endif  // USE_GREENTEA
   }
 }

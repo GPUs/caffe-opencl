@@ -16,36 +16,21 @@ template <typename Dtype>
 void ConvolutionLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
       const vector<Blob<Dtype>*>& top) {
 
-  std::chrono::time_point<std::chrono::system_clock> start, end;
-  start = std::chrono::system_clock::now();
-  std::chrono::time_point<std::chrono::system_clock> startx, endx;
-
   const Dtype* weight = this->blobs_[0]->gpu_data();
   for (int_tp i = 0; i < bottom.size(); ++i) {
     const Dtype* bottom_data = bottom[i]->gpu_data();
     Dtype* top_data = top[i]->mutable_gpu_data();
     // Multi queue execution, all previous work needs to be done first
-
-    // this->device_->FinishQueues();
-
     for (int_tp n = 0; n < this->num_; ++n) {
       // Multi queue execution, go through work queues
       this->device_->SwitchQueue(n);
-
        
-      startx = std::chrono::system_clock::now();
       this->forward_gpu_gemm(bottom_data, n * this->bottom_dim_, weight,
           top_data,  n * this->top_dim_);
-      this->device_->FinishQueues();
-      endx = std::chrono::system_clock::now();
-      std::chrono::duration<double, std::milli> fp_ms_temp = endx - startx;
-
-      VLOG(1) << "gemm " << fp_ms_temp.count();
 
       if (this->bias_term_) {
         const Dtype* bias = this->blobs_[1]->gpu_data();
         this->forward_gpu_bias(top_data, n * this->top_dim_, bias);
-        // this->device_->FinishQueues(); // TODO: temp.
       }
     }
     // Multi queue execution, finish all queues
@@ -54,10 +39,6 @@ void ConvolutionLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
   }
 
   this->device_->FinishQueues();
-  end = std::chrono::system_clock::now();
-  std::chrono::duration<double, std::milli> fp_ms = end - start;
-
-  VLOG(1) << "conv " << fp_ms.count();
 }
 
 template <typename Dtype>
