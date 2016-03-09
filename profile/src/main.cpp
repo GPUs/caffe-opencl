@@ -57,10 +57,6 @@ int setMode(string mode) {
     Caffe::SetDevice(gpus[0]);
     Caffe::Get().USE_CUSTOM_GPU_KERNEL = true;
 
-    caffe::customcl_setup(
-        cmdparser->cl_program.getValue(),
-        cmdparser->arithmetic.getValue()
-    );
     return 0;
   }else if(mode == "viennacl") {
     vector<int> gpus;
