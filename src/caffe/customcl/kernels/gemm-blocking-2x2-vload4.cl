@@ -43,15 +43,36 @@ __kernel void gemm (
     vstore2(ab.s23, 0, &C[(i+1) * size_c + j]);
 }
 
-__kernel void transpose(__global T *odata, __global T* idata, int width, int height)
+
+__kernel void transpose(__global T *odata, int output_width, int output_height, 
+    __global T* idata, int input_width, int input_height)
 {
     unsigned int xIndex = get_global_id(0);
     unsigned int yIndex = get_global_id(1);
     
-    if (xIndex < width && yIndex < height)
-    {
-        unsigned int index_in  = xIndex + width * yIndex;
-        unsigned int index_out = yIndex + height * xIndex;
-        odata[index_out] = idata[index_in]; 
+    if(xIndex < output_width && yIndex < output_height) {
+        if (xIndex < input_width && yIndex < input_height)
+        {
+            odata[xIndex + output_width * yIndex] = idata[yIndex + input_width * xIndex]; 
+        }else{
+            odata[xIndex + output_width * yIndex] = 0.;
+        }
+    }
+}
+
+
+__kernel void copy(__global T *odata, int output_width, int output_height, 
+    __global T* idata, int input_width, int input_height)
+{
+    unsigned int xIndex = get_global_id(0);
+    unsigned int yIndex = get_global_id(1);
+    
+    if(xIndex < output_width && yIndex < output_height) {
+        if (xIndex < input_width && yIndex < input_height)
+        {
+            odata[xIndex + output_width * yIndex] = idata[xIndex + input_width * yIndex]; 
+        }else{
+            odata[xIndex + output_width * yIndex] = 0.;
+        }
     }
 }
