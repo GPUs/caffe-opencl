@@ -54,7 +54,6 @@ int setMode(string mode) {
     gpus.push_back(0);
     Caffe::SetDevices(gpus);  // TODO: not sure we need to set twice.
     Caffe::set_mode(Caffe::GPU);
-    Caffe::SetDevice(gpus[0]);
     Caffe::Get().USE_CUSTOM_GPU_KERNEL = true;
 
     return 0;
@@ -84,8 +83,7 @@ int main(int argc, const char* argv[]) {
     return 0;
   }
 
-  std::cout << "[kernel] " << cmdparser->cl_program.getValue() << endl;
-
+  std::cout << "[load] set mode" << std::endl; 
   if(setMode(cmdparser->mode.getValue())) {
     return 1;
   }
@@ -98,6 +96,7 @@ int main(int argc, const char* argv[]) {
 
 
   // load model.
+  std::cout << "[load] model" << std::endl;
   CaffeMobile* mobile = CaffeMobile::Get(
       cmdparser->model_path.getValue(), 
       cmdparser->weights_path.getValue()

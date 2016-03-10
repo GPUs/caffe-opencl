@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <iostream>
 
 #include "caffe/caffe.hpp"
 #include "caffe/layers/memory_data_layer.hpp"
@@ -57,14 +58,16 @@ CaffeMobile *CaffeMobile::Get(const string &model_path,
 
 CaffeMobile::CaffeMobile(const string &model_path, const string &weights_path) {
   CHECK_GT(model_path.size(), 0) << "Need a model definition to score.";
-  CHECK_GT(weights_path.size(), 0) << "Need model weights to score.";
+  // CHECK_GT(weights_path.size(), 0) << "Need model weights to score.";
 
   clock_t t_start = clock();
   net_.reset(new Net<float>(model_path, caffe::TEST, Caffe::GetDefaultDevice()));
-  net_->CopyTrainedLayersFrom(weights_path);
+  if(weights_path != "") {
+    net_->CopyTrainedLayersFrom(weights_path);
+  }
   clock_t t_end = clock();
-  VLOG(1) << "Loading time: " << 1000.0 * (t_end - t_start) / CLOCKS_PER_SEC
-          << " ms.";
+  std::cout << "Loading time: " << 1000.0 * (t_end - t_start) / CLOCKS_PER_SEC
+          << " ms." << std::endl;
 
   CHECK_EQ(net_->num_inputs(), 1) << "Network should have exactly one input.";
   CHECK_EQ(net_->num_outputs(), 1) << "Network should have exactly one output.";

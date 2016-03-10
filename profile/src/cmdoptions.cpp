@@ -51,7 +51,7 @@ CmdParserMain::CmdParserMain (int argc, const char** argv) :
         "weights",
         "",
         "weights of the caffe model",
-        "/sdcard/model/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel"
+        ""  // by default, we choose to skip loading weights for the model.
     ),
     cl_program(
         *this,
