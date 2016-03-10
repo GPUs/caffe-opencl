@@ -4,6 +4,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <chrono>
 
 #ifdef USE_HDF5
 #include "hdf5.h"
@@ -605,6 +606,8 @@ void Net<Dtype>::AppendParam(const NetParameter& param, const int_tp layer_id,
   }
 }
 
+#define PROFILE_LAYER false
+
 template<typename Dtype>
 Dtype Net<Dtype>::ForwardFromTo(int_tp start, int_tp end) {
   CHECK_GE(start, 0);
@@ -616,8 +619,16 @@ Dtype Net<Dtype>::ForwardFromTo(int_tp start, int_tp end) {
     }
   }
   for (int_tp i = start; i <= end; ++i) {
-    // LOG(ERROR) << "Forwarding " << layer_names_[i];
+#if PROFILE_LAYER==true
+    auto start = std::chrono::system_clock::now();
+#endif
     Dtype layer_loss = layers_[i]->Forward(bottom_vecs_[i], top_vecs_[i]);
+#if PROFILE_LAYER==true
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double, std::milli> fp_ms = end - start;
+    std::cout << "forward " << layer_names_[i] << " : " 
+      << fp_ms.count() << " ms" << std::endl;
+#endif
     loss += layer_loss;
     if (debug_info_) {
       ForwardDebugInfo(i);

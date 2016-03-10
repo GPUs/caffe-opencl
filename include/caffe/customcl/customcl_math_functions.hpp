@@ -185,7 +185,7 @@ static void customcl_transpose_matrix(const int ctx_id, const Dtype* source, int
   size_t global_size[2] = {(output_width + 16 - 1) / 16 * 16, 
                            (output_height + 16 - 1) / 16 * 16};
 
-  auto queue = viennacl::ocl::get_context(0).get_queue().handle().get();
+  auto queue = viennacl::ocl::get_context(ctx_id).get_queue().handle().get();
 
   err = clEnqueueNDRangeKernel(
       queue,

@@ -112,6 +112,10 @@ int main(int argc, const char* argv[]) {
   for(size_t it = 0; it < iterations; it++) {
     mobile->net_->Forward(vector<Blob<float>*>(), 0);
   }
+  //auto queue = viennacl::ocl::get_context(0).get_queue().handle().get();
+  //cl_int err = clFinish(queue);
+  //SAMPLE_CHECK_ERRORS(err);
+
   double end = time_stamp();
   cout << "[test] quiescence" << endl;
   sleep(2); 
@@ -119,6 +123,8 @@ int main(int argc, const char* argv[]) {
 
   // aggregate result.
   double time = (end - start) / iterations;
+  std::cout << "energy before: " << first_time_energy.second << std::endl;
+  std::cout << "energy after: " << last_time_energy.second << std::endl;
   double energy = (last_time_energy.second - first_time_energy.second) / 1e3 / iterations;
   double power = energy / time;
   cout << "feedforward" << endl;
