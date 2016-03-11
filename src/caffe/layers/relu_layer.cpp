@@ -1,6 +1,9 @@
 #include <algorithm>
 #include <vector>
 
+#include <cstdlib>
+#include <iostream>
+
 #include "caffe/layers/relu_layer.hpp"
 
 namespace caffe {
@@ -12,9 +15,18 @@ void ReLULayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
   Dtype* top_data = top[0]->mutable_cpu_data();
   const int_tp count = bottom[0]->count();
   Dtype negative_slope = this->layer_param_.relu_param().negative_slope();
+  int non_zero = 0; // for debugging purpose only.
   for (int_tp i = 0; i < count; ++i) {
     top_data[i] = std::max(bottom_data[i], Dtype(0))
         + negative_slope * std::min(bottom_data[i], Dtype(0));
+    if(std::getenv("RELU_NONZERO")) {
+      if(top_data[i] > 0) {
+        non_zero += 1;
+      }
+    }
+  }
+  if(std::getenv("RELU_NONZERO")) {
+    std::cout << "relu " << non_zero << " / " << count << std::endl;
   }
 }
 

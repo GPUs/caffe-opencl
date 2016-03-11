@@ -24,6 +24,7 @@ public:
 
   void SetScale(const float scale);
 
+  void loadImage(const string& filename);
   vector<int> PredictTopK(const string &img_path, int k);
   float timePrediction(const vector<string>& img_paths);
 

@@ -68,8 +68,15 @@ CmdParserMain::CmdParserMain (int argc, const char** argv) :
         "",
         "precision of the arithmetics",
         "float"
+    ),
+    input(
+        *this,
+        0,
+        "input",
+        "",
+        "input test image",
+        "" // default no test image.
     )
-
 {
 }
 

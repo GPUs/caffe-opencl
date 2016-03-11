@@ -108,15 +108,25 @@ int main(int argc, const char* argv[]) {
   cout << "[test] running" << endl;
   size_t iterations = cmdparser->iterations.getValue();
   std::pair<double, double> first_time_energy = Mocha::getCurrentEnergy();
-  double start = time_stamp();
-  for(size_t it = 0; it < iterations; it++) {
-    mobile->net_->Forward(vector<Blob<float>*>(), 0);
+  double start, end;
+  if(cmdparser->input.getValue() == "") { // no image input.
+    start = time_stamp();
+    for(size_t it = 0; it < iterations; it++) {
+      mobile->net_->Forward(vector<Blob<float>*>(), 0);
+    }
+    end = time_stamp();
+  }else{
+    mobile->loadImage(cmdparser->input.getValue());
+    start = time_stamp();
+    for(size_t it = 0; it < iterations; it++) {
+      mobile->net_->ForwardPrefilled();
+    }
+    end = time_stamp();
   }
   //auto queue = viennacl::ocl::get_context(0).get_queue().handle().get();
   //cl_int err = clFinish(queue);
   //SAMPLE_CHECK_ERRORS(err);
 
-  double end = time_stamp();
   cout << "[test] quiescence" << endl;
   sleep(2); 
   std::pair<double, double> last_time_energy = Mocha::getCurrentEnergy();

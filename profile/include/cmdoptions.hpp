@@ -8,6 +8,7 @@ class CmdParserMain : public CmdParserCommon
 {
 public:
   CmdOption<string> mode;
+  CmdOption<string> input;
   CmdOption<size_t> numThreads;
   CmdOption<size_t> iterations;
   

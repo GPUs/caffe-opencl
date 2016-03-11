@@ -192,7 +192,7 @@ void CaffeMobile::WrapInputLayer(std::vector<cv::Mat> *input_channels, int layer
   }
 }
 
-vector<float> CaffeMobile::Forward(const string &filename) {
+void CaffeMobile::loadImage(const string& filename) {
   cv::Mat img = cv::imread(filename, -1);
   CHECK(!img.empty()) << "Unable to decode image " << filename;
 
@@ -207,6 +207,9 @@ vector<float> CaffeMobile::Forward(const string &filename) {
 
   Preprocess(img, &input_channels);
 
+}
+
+vector<float> CaffeMobile::Forward(const string &filename) {
   clock_t t_start = clock();
   net_->ForwardPrefilled();
   clock_t t_end = clock();
