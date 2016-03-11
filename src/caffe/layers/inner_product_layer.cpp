@@ -1,5 +1,8 @@
 #include <vector>
 
+#include <cstdlib>
+#include <iostream>
+
 #include "caffe/filler.hpp"
 #include "caffe/layers/inner_product_layer.hpp"
 #include "caffe/util/math_functions.hpp"
@@ -82,6 +85,15 @@ void InnerProductLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
   const Dtype* bottom_data = bottom[0]->cpu_data();
   Dtype* top_data = top[0]->mutable_cpu_data();
   const Dtype* weight = this->blobs_[0]->cpu_data();
+
+  if(std::getenv("PRINT_LAYER")) {
+    std::cout << "fc-gemm "
+       << " " << M_
+       << "x" << K_
+       << "x" << N_
+       << std::endl;
+  }
+  
   caffe_cpu_gemm<Dtype>(CblasNoTrans, CblasTrans, M_, N_, K_, (Dtype) 1.,
                         bottom_data, weight, (Dtype) 0., top_data);
   if (bias_term_) {

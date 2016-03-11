@@ -1,6 +1,9 @@
 #include <algorithm>
 #include <vector>
 
+#include <cstdlib>
+#include <iostream>
+
 #include "caffe/filler.hpp"
 #include "caffe/layers/base_conv_layer.hpp"
 #include "caffe/util/im2col.hpp"
@@ -302,11 +305,18 @@ void BaseConvolutionLayer<Dtype>::forward_cpu_gemm(const Dtype* input,
     col_buff = col_buffer_.cpu_data();
   }
   for (int_tp g = 0; g < group_; ++g) {
-    caffe_cpu_gemm<Dtype>(CblasNoTrans, CblasNoTrans,
-                          conv_out_channels_ / group_, conv_out_spatial_dim_,
-                          kernel_dim_, (Dtype) 1., weights + weight_offset_ * g,
-                          col_buff + col_offset_ * g, (Dtype) 0.,
-                          output + output_offset_ * g);
+      if(std::getenv("PRINT_LAYER")) {
+        std::cout << "conv-gemm "
+           << " " << conv_out_channels_ / group_
+           << "x" << kernel_dim_
+           << "x" << conv_out_spatial_dim_
+           << std::endl;
+      }
+      caffe_cpu_gemm<Dtype>(CblasNoTrans, CblasNoTrans,
+                            conv_out_channels_ / group_, conv_out_spatial_dim_,
+                            kernel_dim_, (Dtype) 1., weights + weight_offset_ * g,
+                            col_buff + col_offset_ * g, (Dtype) 0.,
+                            output + output_offset_ * g);
   }
 }
 

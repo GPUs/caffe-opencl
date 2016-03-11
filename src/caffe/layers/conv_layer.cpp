@@ -1,6 +1,7 @@
 #include <vector>
 
 #include "caffe/layers/conv_layer.hpp"
+#include <cstdlib>
 
 namespace caffe {
 
@@ -22,9 +23,22 @@ void ConvolutionLayer<Dtype>::compute_output_shape() {
   }
 }
 
+
 template<typename Dtype>
 void ConvolutionLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
                                           const vector<Blob<Dtype>*>& top) {
+  if(std::getenv("PRINT_LAYER")) {
+    std::cout << "conv " << this->conv_input_shape_.cpu_data()[0]
+       << "x" << this->conv_input_shape_.cpu_data()[1]
+       << "x" << this->conv_input_shape_.cpu_data()[2]
+       << " " << this->kernel_shape_.cpu_data()[0]
+       << "x" << this->kernel_shape_.cpu_data()[1]
+       << " " << this->channels_
+       << "x" << this->output_shape_[0]
+       << "x" << this->output_shape_[1]
+       << std::endl;
+  }
+
   const Dtype* weight = this->blobs_[0]->cpu_data();
   for (int_tp i = 0; i < bottom.size(); ++i) {
     const Dtype* bottom_data = bottom[i]->cpu_data();
